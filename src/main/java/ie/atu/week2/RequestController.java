@@ -25,7 +25,7 @@ public class RequestController
     @GetMapping("/calculate")
     public String calculate(@RequestParam int num1, @RequestParam int num2, @RequestParam String operation)
     {
-        int ans;
+        float ans;
         switch (operation)
         {
             case "add":
@@ -40,7 +40,7 @@ public class RequestController
                     return "You cannot divide by 0!";
                 }
                 else{
-                    ans= num1/num2;
+                    ans= (float)num1/num2;
                 }
                 break;
             case "multiply":
@@ -49,6 +49,6 @@ public class RequestController
             default:
                 return "You're in the default statement!";
         }
-        return Integer.toString(ans);
+        return "The answer is: " + Float.toString(ans);
     }
 }
