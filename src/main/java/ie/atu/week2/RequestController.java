@@ -47,7 +47,7 @@ public class RequestController
                 ans= num1*num2;
                 break;
             default:
-                return "You're in the default statement!";
+                return "You're in the Default Statement!";
         }
         return "The answer is: " + Float.toString(ans);
     }
