@@ -26,12 +26,15 @@ public class RequestController
     public String calculate(@RequestParam float num1, @RequestParam float num2, @RequestParam String operation)
     {
         float ans;
+        String operationMode;
         switch (operation)
         {
             case "add":
+                operationMode="add";
                 ans= num1+num2;
                 break;
             case "subtract":
+                operationMode="subtract";
                 ans= (num1-num2);
                 break;
             case "divide":
@@ -40,15 +43,17 @@ public class RequestController
                     return "You cannot divide by 0!";
                 }
                 else{
+                    operationMode="divide";
                     ans= (float)num1/num2;
                 }
                 break;
             case "multiply":
+                operationMode="multiply";
                 ans= num1*num2;
                 break;
             default:
                 return "You're in the Default Statement!";
         }
-        return "The answer is: " + ans;
+        return "{\"operation:\" \"" + operationMode + "\", \"total:\" " + ans + "}";
     }
 }
