@@ -23,7 +23,7 @@ public class RequestController
         return "Your name is: " + name + " and your age is: " + age;
     }
     @GetMapping("/calculate")
-    public String calculate(@RequestParam int num1, @RequestParam int num2, @RequestParam String operation)
+    public String calculate(@RequestParam float num1, @RequestParam float num2, @RequestParam String operation)
     {
         float ans;
         switch (operation)
@@ -49,6 +49,6 @@ public class RequestController
             default:
                 return "You're in the Default Statement!";
         }
-        return "The answer is: " + Float.toString(ans);
+        return "The answer is: " + ans;
     }
 }
