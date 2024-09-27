@@ -44,7 +44,7 @@ public class RequestController
                 }
                 else{
                     operationMode="divide";
-                    ans= (float)num1/num2;
+                    ans= num1/num2;
                 }
                 break;
             case "multiply":
